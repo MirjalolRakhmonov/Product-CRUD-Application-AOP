@@ -23,7 +23,7 @@ public class Product {
 	private String description;
 	
 	@Column(name = "price")
-	private int price;
+	private String price;
 	
 	public Product() {
 		
@@ -53,11 +53,11 @@ public class Product {
 		this.description = description;
 	}
 
-	public int getPrice() {
+	public String getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(String price) {
 		this.price = price;
 	}
 
@@ -66,5 +66,4 @@ public class Product {
 		return "Product [id=" + id + ", productName=" + productName + ", description=" + description + ", price="
 				+ price + "]";
 	}
-	
 }
