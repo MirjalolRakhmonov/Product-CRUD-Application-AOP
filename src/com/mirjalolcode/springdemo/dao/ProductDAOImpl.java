@@ -20,7 +20,6 @@ public class ProductDAOImpl implements ProductDAO {
 	private SessionFactory sessionFactory;
 
 	@Override
-	@Transactional
 	public List<Product> getProducts() {
 		// get the current hibernate session
 		Session currentSession=sessionFactory.getCurrentSession();
