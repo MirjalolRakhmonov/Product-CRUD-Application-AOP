@@ -32,6 +32,11 @@ public class ProductController {
 	
 	@GetMapping("/showFormForAdd")
 	public String showFormForAdd(Model theModel) {
+		// create model attribute to bind form data
+				Product theProduct=new Product();
+
+				theModel.addAttribute("product", theProduct);
+				
 		return "product-form";
 	}
 }
