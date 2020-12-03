@@ -1,4 +1,4 @@
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <!DOCTYPE html>
 <html>
@@ -22,6 +22,9 @@
        <h3>Save Product</h3>
 
         <form:form action="saveProduct" modelAttribute="product" method="POST">
+        
+        <!-- need to associate this data with customer id -->
+   		<form:hidden path="id" />
 
             <table>
                 <tbody>

@@ -44,7 +44,7 @@
                <c:forEach var="tempProduct" items="${products}">
                
                <!-- construct "update" link with product id -->
-               <c:url var="updateLink" value="product/showFormForUpdate">
+               <c:url var="updateLink" value="/product/showFormForUpdate">
                <c:param name="productId" value="${tempProduct.id}"/>
                </c:url>
 

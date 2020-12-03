@@ -42,4 +42,15 @@ public class ProductDAOImpl implements ProductDAO {
 		currentSession.saveOrUpdate(theProduct);
 	}
 
+	@Override
+	public Product getProduct(int theId) {
+		// get the current hibernate session
+		Session currentSession=sessionFactory.getCurrentSession();
+		
+		// now retrieve/read from database using primary key
+		Product theProduct=currentSession.get(Product.class, theId);
+		
+		return theProduct;
+	}
+
 }

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.mirjalolcode.springdemo.dao.ProductDAO;
 import com.mirjalolcode.springdemo.entity.Product;
@@ -39,7 +40,7 @@ public class ProductController {
 
 				theModel.addAttribute("product", theProduct);
 				
-		return "product-form";
+		return "product-form"; 
 	}
 	
 	@PostMapping("/saveProduct")
@@ -48,5 +49,17 @@ public class ProductController {
 		productService.saveProduct(theProduct);
 		
 		return "redirect:/product/list";
+	}
+	
+	@GetMapping("/showFormForUpdate")
+	public String showFormForUpdate(@RequestParam("productId") int theId, Model theModel) {
+		// get the product from service
+		Product theProduct=productService.getProduct(theId);
+		
+		// set product as a model attribute to pre-populate the form
+		theModel.addAttribute("product", theProduct);
+		
+		// send over to form
+		return "product-form";
 	}
 }
