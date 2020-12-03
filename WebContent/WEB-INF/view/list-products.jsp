@@ -37,15 +37,25 @@
                   <th>Product Name</th>
                   <th>Description</th>
                   <th>Price</th>
+                  <th>Action</th>
                </tr>
                
                <!-- loop over and print products -->
                <c:forEach var="tempProduct" items="${products}">
+               
+               <!-- construct "update" link with product id -->
+               <c:url var="updateLink" value="product/showFormForUpdate">
+               <c:param name="productId" value="${tempProduct.id}"/>
+               </c:url>
 
             <tr>
                 <td> ${tempProduct.productName}</td>
                 <td> ${tempProduct.description}</td>
                 <td> ${tempProduct.price}</td>
+                
+                <td>
+                   <a href="${updateLink}">Update</a>
+                </td>
             </tr>
 
           </c:forEach>
