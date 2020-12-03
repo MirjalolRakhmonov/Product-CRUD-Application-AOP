@@ -47,6 +47,11 @@
                <c:url var="updateLink" value="/product/showFormForUpdate">
                <c:param name="productId" value="${tempProduct.id}"/>
                </c:url>
+               
+               <!-- construct "delete" link with product id -->
+               <c:url var="deleteLink" value="/product/delete">
+               <c:param name="productId" value="${tempProduct.id}"/>
+               </c:url>
 
             <tr>
                 <td> ${tempProduct.productName}</td>
@@ -55,6 +60,8 @@
                 
                 <td>
                    <a href="${updateLink}">Update</a>
+                   |
+                   <a href="${deleteLink}">Delete</a>
                 </td>
             </tr>
 
