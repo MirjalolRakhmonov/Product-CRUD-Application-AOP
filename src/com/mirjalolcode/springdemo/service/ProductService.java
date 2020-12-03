@@ -6,4 +6,6 @@ import com.mirjalolcode.springdemo.entity.Product;
 
 public interface ProductService {
 	public List<Product> getProducts();
+
+	public void saveProduct(Product theProduct);
 }
