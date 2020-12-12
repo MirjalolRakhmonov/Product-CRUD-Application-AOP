@@ -18,6 +18,7 @@ TO DO
 7. Add a service layer
 
 AOP Part
+
 8. Add AspectJ JAR files, enable AspectJ Auto Proxy
 9. Setup Pointcut declarations
 10. Add @Before advice
